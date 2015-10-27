@@ -23,7 +23,8 @@ if inputr == "e":
     key_a=[associations.find(y) for y in key_in]
     m_k_a=zip(msg_a, key_a)
     comp_nums=list(z[0] + z[1] for z in m_k_a)
-    print(associations[index] for c in comp_nums)
+    enclist = [associations[c] for c in comp_nums]
+    print()
     #find out why there is an error in the line above/how to index from a list
     
         
