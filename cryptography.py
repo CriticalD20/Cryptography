@@ -13,7 +13,7 @@ See the detailed requirements at https://github.com/HHS-IntroProgramming/Cryptog
 associations = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;'\"/\\<>(){}[]-=_+?!"
 input1=""
 
-while input1=="q":
+while input1 != "q":
     input1=input("Enter e to encrypt, d to decrypt, or q to quit: ")
     inputr=input1.lower()
     if inputr == "e":
@@ -37,12 +37,12 @@ while input1=="q":
         msg_in2=("Message: ")
         key_in2=("Key: ")
         key_in=key_in*(len(msg_in)//len(key_in)+1)
-        msg_a=[associations.find(x) for x in msg_in]
-        key_a=[associations.find(y) for y in key_in]
+        msg_a=[associations.find(x) for x in msg_in2]
+        key_a=[associations.find(y) for y in key_in2]
         m_k_a=zip(msg_a, key_a)
         mk_a=[(t[0]+t[1]) for t in m_k_a]
         mkz=zip(mk_a, key_a)
-        comp_nums=list(z[0] + z[1] for z in mkz)
+        comp_nums=list(z[0] - z[1] for z in mkz)
         enclist = [associations[z] for z in comp_nums]
         print(''.join(enclist))
         
