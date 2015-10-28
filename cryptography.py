@@ -19,9 +19,9 @@ while input1 != "q":
     if inputr == "e":
         msg_in=input("Message: ")
         key_in=input("Key: ")
-        key_in=key_in*(len(msg_in)//len(key_in)+1)
+        key_ina=key_in*(len(msg_in)//len(key_in)+1)
         msg_a=[associations.find(x) for x in msg_in]
-        key_a=[associations.find(y) for y in key_in]
+        key_a=[associations.find(y) for y in key_ina]
         m_k_a=zip(msg_a, key_a)
         comp_nums=list(z[0] + z[1] for z in m_k_a)
         for n, c in enumerate(comp_nums):
@@ -31,20 +31,23 @@ while input1 != "q":
                 c=c
             comp_nums[n] = c
         enclist = [associations[c] for c in comp_nums]
-        print(''.join(enclist))
+        fin=("".join(enclist))
+        print(fin)
         
     elif inputr == "d":
-        msg_in2=("Message: ")
-        key_in2=("Key: ")
-        key_in=key_in*(len(msg_in)//len(key_in)+1)
-        msg_a=[associations.find(x) for x in msg_in2]
-        key_a=[associations.find(y) for y in key_in2]
-        m_k_a=zip(msg_a, key_a)
-        mk_a=[(t[0]+t[1]) for t in m_k_a]
-        mkz=zip(mk_a, key_a)
-        comp_nums=list(z[0] - z[1] for z in mkz)
-        enclist = [associations[z] for z in comp_nums]
-        print(''.join(enclist))
+        msg_in2=("Message: "+fin+"")
+        key_in2=("Key: "+key_in+"")
+        print(msg_in2)
+        print(key_in2)
+        key_inz=key_in*(len(fin)//len(key_in)+1)
+        msg_az=[associations.find(x) for x in fin]
+        key_az=[associations.find(y) for y in key_inz]
+        m_k_az=zip(msg_az, key_az)
+        #mk_a=[(t[0]+t[1]) for t in m_k_az]
+        #mkz=zip(mk_a, key_az)
+        comp_numsz=list(z[0] - z[1] for z in m_k_az)
+        enclistz = [associations[z] for z in comp_numsz]
+        print(''.join(enclistz))
         
     elif inputr == "q":
         print("Goodbye!")
