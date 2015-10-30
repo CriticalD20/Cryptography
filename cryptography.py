@@ -30,7 +30,7 @@ while input1 != "q":
             else:
                 c=c
             comp_nums[n] = c
-        enclist = [associations[c] for c in comp_nums]
+        enclist = [associations[u] for u in comp_nums]
         fin=("".join(enclist))
         print(fin)
         
@@ -40,13 +40,13 @@ while input1 != "q":
         print(msg_in2)
         print(key_in2)
         key_inz=key_in*(len(fin)//len(key_in)+1)
-        msg_az=[associations.find(x) for x in fin]
-        key_az=[associations.find(y) for y in key_inz]
+        msg_az=[associations.find(p) for p in msg_in]
+        key_az=[associations.find(m) for m in key_inz]
         m_k_az=zip(msg_az, key_az)
-        #mk_a=[(t[0]+t[1]) for t in m_k_az]
-        #mkz=zip(mk_a, key_az)
-        comp_numsz=list(z[0] - z[1] for z in m_k_az)
-        enclistz = [associations[z] for z in comp_numsz]
+        mk_a=[(t[0]+t[1]) for t in m_k_az]
+        mkz=zip(mk_a, key_az)
+        comp_numsz=list(z[0] - z[1] for z in mkz)
+        enclistz = [associations[q] for q in comp_numsz]
         print(''.join(enclistz))
         
     elif inputr == "q":
