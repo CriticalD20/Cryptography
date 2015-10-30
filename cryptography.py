@@ -25,8 +25,8 @@ while input1 != "q":
         m_k_a=zip(msg_a, key_a)
         comp_nums=list(z[0] + z[1] for z in m_k_a)
         for n, c in enumerate(comp_nums):
-            if c > 77:
-                c= c-78
+            if c >= 77:
+                c= c-77
             else:
                 c=c
             comp_nums[n] = c
