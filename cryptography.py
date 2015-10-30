@@ -35,11 +35,11 @@ while input1 != "q":
         print(fin)
         
     elif inputr == "d":
-        msg_in2=("Message: "+fin+"")
-        key_in2=("Key: "+key_in+"")
+        msg_in2=input("Message: ")
+        key_in2=input("Key: ")
         print(msg_in2)
         print(key_in2)
-        key_inz=key_in*(len(fin)//len(key_in)+1)
+        key_inz=key_in2*(len(msg_in2)//len(key_in2)+1)
         msg_az=[associations.find(p) for p in msg_in]
         key_az=[associations.find(m) for m in key_inz]
         m_k_az=zip(msg_az, key_az)
