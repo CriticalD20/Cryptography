@@ -25,8 +25,8 @@ while input1 != "q":
         m_k_a=zip(msg_a, key_a)
         comp_nums=list(z[0] + z[1] for z in m_k_a)
         for n, c in enumerate(comp_nums):
-            if c >= 77:
-                c= c-77
+            if c >= 85:
+                c= c-85
             else:
                 c=c
             comp_nums[n] = c
@@ -37,14 +37,12 @@ while input1 != "q":
     elif inputr == "d":
         msg_in2=input("Message: ")
         key_in2=input("Key: ")
-        print(msg_in2)
-        print(key_in2)
         key_inz=key_in2*(len(msg_in2)//len(key_in2)+1)
         msg_az=[associations.find(p) for p in msg_in2]
         key_az=[associations.find(m) for m in key_inz]
-        m_k_az=zip(msg_az, key_az)
-        mk_a=[(t[0]+t[1]) for t in m_k_az]
-        mkz=zip(mk_a, key_az)
+        #m_k_az=zip(msg_az, key_az)
+        #mk_a=[(t[0]+t[1]) for t in m_k_az]
+        mkz=zip(msg_az, key_az)
         comp_numsz=list(z[0] - z[1] for z in mkz)
         enclistz = [associations[q] for q in comp_numsz]
         print(''.join(enclistz))
