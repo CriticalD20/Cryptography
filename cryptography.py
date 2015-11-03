@@ -9,10 +9,8 @@ Write and submit a program that encrypts and decrypts user data.
 
 See the detailed requirements at https://github.com/HHS-IntroProgramming/Cryptography/blob/master/README.md
 """
-
 associations = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;'\"/\\<>(){}[]-=_+?!"
 input1=""
-
 while input1 != "q":
     input1=input("Enter e to encrypt, d to decrypt, or q to quit: ")
     inputr=input1.lower()
@@ -33,23 +31,18 @@ while input1 != "q":
         enclist = [associations[u] for u in comp_nums]
         fin=("".join(enclist))
         print(fin)
-        #error in the decrypt, prints message, then key, then message instead of decryption
     elif inputr == "d":
         msg_in2=input("Message: ")
         key_in2=input("Key: ")
         key_inz=key_in2*(len(msg_in2)//len(key_in2)+1)
         msg_az=[associations.find(p) for p in msg_in2]
         key_az=[associations.find(m) for m in key_inz]
-        #m_k_az=zip(msg_az, key_az)
-        #mk_a=[(t[0]+t[1]) for t in m_k_az]
         mkz=zip(msg_az, key_az)
         comp_numsz=list(z[0] - z[1] for z in mkz)
         enclistz = [associations[q] for q in comp_numsz]
         print(''.join(enclistz))
-        
     elif inputr == "q":
         print("Goodbye!")
-         
     elif inputr != "q" and inputr != "e" and inputr !="d" and inputr !="e":
         print("Did not understand command, try again.")
         
